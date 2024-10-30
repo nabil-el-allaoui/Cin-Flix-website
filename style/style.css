@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    font-family: "instrument sans";
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FBF6F6;
+    height: 80px;
+}
+.right-side {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#dark-button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+    padding: 3px;
+}
+.right-side img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.right-side ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+}
+.right-side li {
+    list-style: none;
+}
+
+#logo {
+    margin-left: 30px;
+}
+
+.search-bar {
+    height: 27px;
+    border: 1px solid gray;
+    border-radius: 0 4px 4px 0;
+}
+.search-section {
+    display: flex;
+    align-items: center;
+}
+.search-section img {
+    width: 21px;
+    height: 21px;
+    border: 1px solid gray;
+    border-right: 0;
+    padding: 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.movie-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    row-gap: 40px;
+    background-color: #FBF6F6;
+    padding: 100px 0;
+}
+.rating {
+    display: flex;
+    column-gap: 5px;
+}
+.rating p {
+    font-size: 14px;
+}
+.rating img {
+    width: 20px;
+}
+.movie h3 {
+    text-align: center;
+    margin-top: 5px;
+}
+#movie-banner {
+    height: 300px;
+    border-radius: 4px;
+}
+.movie {
+    line-height: 7px;
+    height: fit-content;
+    width: fit-content;
+    background-color: #F5E4E4;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 0.8px gray;
+    position: relative;
+    cursor: pointer;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-color: #DADADA;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+.footer ul {
+    border-top: 1px solid;
+    list-style: none;
+    line-height: 25px;
+}
+
+.slider{
+    margin: auto;
+    overflow: hidden;
+    width: 80vw;
+}
+.slider input {
+    display: none;
+}
+.slider-section {
+    display: flex;
+    width: 500%;
+    height: 600px;
+    transition: all 1s ease;
+}
+.slider-section img {
+    width: 100%;
+    object-fit: fill;
+}
+.slider .check1:checked ~ .slider-section {
+    margin-left: 0;
+}
+
+.slider .check2:checked ~ .slider-section {
+    margin-left: -100%;
+}
+
+.slider .check3:checked ~ .slider-section {
+    margin-left: -200%;
+}
+
+.slider .check4:checked ~ .slider-section {
+    margin-left: -300%;
+}
+
+.slider .check5:checked ~ .slider-section {
+    margin-left: -400%;
+}
+
+.buttons {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    align-items: center;
+    height: 600px;
+}
+.buttons button {
+    font-size: 75px;
+    border: none;
+    height: fit-content;
+    padding-bottom: 8px;
+    width: 50px;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background-color: #F5E4E4;
+    color: white;
+}
+
+.hovered-text {
+    background-color: rgba(188, 188, 188, 0.562);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.15s ease;
+}
+.details-button {
+    border: none;
+    padding: 8px 25px;
+    border-radius: 3px;
+    background-color: #EB3A3A;
+    color: white;
+    font-weight: 460;
+    font-family: "instrument sans";
+    cursor: pointer;
+}
+.hovered-text h4 {
+    color: white;
+}
+.movie:hover .hovered-text {
+    opacity: 1;
+}
+.movie:hover {
+    transform: scale(1.1);
+}

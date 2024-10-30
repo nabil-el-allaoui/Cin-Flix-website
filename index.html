@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <img id="logo" src="images/CinéFlix.svg" alt="">
+        <div class="right-side">
+            <ul>
+                <li>Home</li>
+                <li>My list</li>
+            </ul>
+            <div class="search-section">
+                <img class="search-icon" src="images/search-icon.svg" alt="">
+                <input class="search-bar" type="text" placeholder="search for movie">
+            </div>
+            <img id="dark-button" src="images/moon-solid.svg" alt="">
+            <img src="images/profile.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="slider">
+
+        <div class="buttons">
+            <button onclick="prevfunction()">&#8249;</button>
+            <button onclick="myfunction()">&#8250;</button>
+        </div>
+
+        <input class="check1" type="radio" id="radio1" name="slide">
+        <input class="check2" type="radio" id="radio2" name="slide">
+        <input class="check3" type="radio" id="radio3" name="slide">
+        <input class="check4" type="radio" id="radio4" name="slide">
+        <input class="check5" type="radio" id="radio5" name="slide">
+        <div class="slider-section">
+            <img src="covers/thegodfather.png" alt="">
+            <img src="covers/joker.jfif" alt="">
+            <img src="covers/breaking-bad.jfif" alt="">
+            <img src="covers/the-maze.jfif" alt="">
+            <img src="covers/Spirited Away.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="movie-section">
+        <div class="movie">
+            <img id="movie-banner" src="images/spirited away.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Spirited Away</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="movie-banner" src="images/the-godfather.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>The Godfather</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/Joker.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Joker</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/breaking-bad.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Breaking Bad</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/the-maze-runner.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>The Maze Runner</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/grave-of-fireflies.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Grave of The Fireflies</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="movie-banner" src="images/harrypotter.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Harry Potter</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/Monster.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Monster</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/Despicable Me.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>Despicable me</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="movie-banner" src="images/lord-of-the-rings.jfif" alt="">
+            <div class="rating">
+                <img src="images/Star 6.svg" alt="">
+                <p>( 4.5 / 5 )</p>
+            </div>
+            <h3>The Lord of The Rings</h3>
+            <div class="hovered-text">
+                <h4>Movie title</h4>
+                <a href="#"><button class="details-button">Details</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div>
+                <ul>
+                    <li>About us</li>
+                    <li>FAQ</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Tasks</li>
+                    <li>Movies</li>
+                    <li>Licenses</li>
+                </ul>
+            </div>
+            <div>
+                <ul id="block">
+                    <li>contact-us</li>
+                    <li>Policy</li>
+                    <li>Terms & conditions</li>
+                </ul>
+            </div>
+        </div>
+        <p>© 1990-2024 by CinéFlix, Inc.</p>
+    </div>
+
+    <script src="style/index.js"></script>
+</body>
+
+</html>

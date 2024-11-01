@@ -49,28 +49,33 @@ let moonButton = document.getElementById('dark-button');
 function lighMode() {
     document.body.style.setProperty('--mainColor', '#FBF6F6');
     document.body.style.setProperty('--secondaryColor', '#F5E4E4');
-    document.body.style.setProperty('--thirdColor' , '#DADADA');
-    document.body.style.setProperty('--basicColor2' , 'black');
+    document.body.style.setProperty('--thirdColor', '#DADADA');
+    document.body.style.setProperty('--basicColor2', 'black');
     document.body.style.setProperty('--borderColor', 'gray');
     document.body.style.setProperty('--bodyColor', 'white');
 }
 function darkMode() {
     document.body.style.setProperty('--mainColor', 'black')
-    document.body.style.setProperty('--secondaryColor' , 'black');
-    document.body.style.setProperty('--thirdColor' , 'black');
-    document.body.style.setProperty('--basicColor2' , 'white');
+    document.body.style.setProperty('--secondaryColor', 'black');
+    document.body.style.setProperty('--thirdColor', 'black');
+    document.body.style.setProperty('--basicColor2', 'white');
     document.body.style.setProperty('--borderColor', 'white');
     document.body.style.setProperty('--bodyColor', 'black');
 }
 
-dark.addEventListener("click" , (e) => {
-
-    if(dark.checked === false){
+dark.addEventListener("click", (e) => {
+    if (dark.checked === false) {
         lighMode();
         moonButton.style.display = "block";
         sunButton.style.display = "none";
     }
     else {
+        localStorage.setItem("checked", dark.checked)
+        var checked = JSON.parse(localStorage.getItem("checked"));
+        console.log(dark.checked);
+        if(dark.checked === true) {
+            darkMode();
+        }
         darkMode();
         moonButton.style.display = "none";
         sunButton.style.display = "block";

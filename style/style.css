@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --mainColor: #FBF6F6;
+    --secondaryColor : #F5E4E4;
+    --thirdColor : #DADADA;
+    --buttonsColor : #EB3A3A;
+    --basicColor : white;
+    --basicColor2: black;
+    --linkcolor : rgb(46, 46, 253);
+    --basicColor3 : gray;
+    --submitColor : #EBB33A;
+    --borderColor : gray;
+    --bodyColor : white;
+}
 body {
     font-family: "instrument sans";
     margin: 0;
     padding: 0;
+    background-color: var(--bodyColor);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FBF6F6;
+    background-color: var(--mainColor);
     height: 80px;
 }
 .right-side {
@@ -22,7 +37,6 @@ body {
 #dark-button {
     width: 25px;
     height: 25px;
-    border: 1px solid;
     padding: 3px;
 }
 .right-side img {
@@ -39,6 +53,7 @@ body {
 }
 .right-side li {
     list-style: none;
+    color: var(--basicColor2);
 }
 
 #logo {
@@ -47,17 +62,17 @@ body {
 
 .search-bar {
     height: 27px;
-    border: 1px solid gray;
+    border: 1px solid var(--borderColor);
     border-radius: 0 4px 4px 0;
 }
 .search-section {
     display: flex;
     align-items: center;
 }
-.search-section img {
+.search-section svg {
     width: 21px;
     height: 21px;
-    border: 1px solid gray;
+    border: 1px solid var(--borderColor);
     border-right: 0;
     padding: 4px;
     border-radius: 4px 0 0 4px;
@@ -68,7 +83,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     place-items: center;
     row-gap: 40px;
-    background-color: #FBF6F6;
+    background-color: var(--mainColor);
     padding: 100px 0;
 }
 .rating {
@@ -77,6 +92,7 @@ body {
 }
 .rating p {
     font-size: 14px;
+    color: var(--basicColor2);
 }
 .rating img {
     width: 20px;
@@ -84,6 +100,7 @@ body {
 .movie h3 {
     text-align: center;
     margin-top: 5px;
+    color: var(--basicColor2);
 }
 #movie-banner {
     height: 300px;
@@ -93,7 +110,7 @@ body {
     line-height: 7px;
     height: fit-content;
     width: fit-content;
-    background-color: #F5E4E4;
+    background-color: var(--secondaryColor);
     border-radius: 4px;
     box-shadow: 1px 1px 1px 0.8px gray;
     position: relative;
@@ -103,7 +120,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 300px;
-    background-color: #DADADA;
+    background-color: var(--thirdColor);
     justify-content: center;
     align-items: center;
 }
@@ -116,8 +133,14 @@ body {
     border-top: 1px solid;
     list-style: none;
     line-height: 25px;
+    color: var(--basicColor2);
 }
-
+#copyright {
+    color: var(--basicColor2);
+}
+#Likecount {
+    color: var(--basicColor2);
+}
 .slider{
     margin: auto;
     overflow: hidden;
@@ -134,7 +157,7 @@ body {
 }
 .slider-section img {
     width: 100%;
-    object-fit: fill;
+    object-fit: contain;
 }
 .slider .check1:checked ~ .slider-section {
     margin-left: 0;
@@ -175,7 +198,7 @@ body {
 }
 .buttons button:hover {
     background-color: #F5E4E4;
-    color: white;
+    color: var(--basicColor);
 }
 
 .hovered-text {
@@ -191,22 +214,201 @@ body {
     opacity: 0;
     transition: all 0.15s ease;
 }
+.hovered-text img {
+    margin-top: 15px;
+    height: 25px;
+}
 .details-button {
     border: none;
     padding: 8px 25px;
     border-radius: 3px;
-    background-color: #EB3A3A;
-    color: white;
+    background-color: var(--buttonsColor);
+    color: var(--basicColor);
     font-weight: 460;
     font-family: "instrument sans";
     cursor: pointer;
 }
 .hovered-text h4 {
-    color: white;
+    color: var(--basicColor);
 }
 .movie:hover .hovered-text {
     opacity: 1;
 }
 .movie:hover {
     transform: scale(1.1);
+}
+.movie-presentation {
+    background-color: var(--mainColor);
+    margin: 0;
+    padding-bottom: 15px;
+}
+.movie-presentation .movie-title {
+    margin: 0;
+    text-align: center;
+    font-size: 32px;
+    color: var(--basicColor2);
+}
+.image-video {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    place-items: center;
+    margin-top: 25px;
+}
+.image-video img {
+    width: 370px;
+    height: 470px;
+    object-fit: contain;
+}
+.image-video video {
+    width: 850px;
+}
+.genre .type {
+    height: 40px;
+    width: 110px;
+    border: 1px solid;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.movie-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.genre {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    width: 660px;
+}
+.genre .type {
+    cursor: pointer;
+}
+.movie-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--secondaryColor);
+    padding-bottom: 30px;
+}
+.description p{
+    font-weight: 600;
+    color: var(--basicColor3);
+}
+.description {
+    border-right: 1px solid gray;
+    margin-left: 20px;
+    line-height: 30px;
+    padding-top: 50px;
+}
+.description span {
+    font-weight: bolder;
+    color: var(--basicColor2);
+}
+.description .person {
+    color: var(--linkcolor);
+    cursor: pointer;
+}
+.interaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.interaction .like svg {
+    width: 20px;
+    height: 20px;
+}
+.interaction .like {
+    display: flex;
+    width: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+.interaction input {
+    padding-bottom: 90px;
+    width: 300px;
+    border: 1px solid black;
+    font-size: 18px;
+    outline: none;
+    padding-left: 5px;
+}
+.rate-button svg {
+    height: 30px;
+    cursor: pointer;
+}
+.toggle:checked ~ .movie-details .rate-button .help svg path{
+    fill: gold;
+    transform: scale(1.1);
+    transition: all 0.15s ease;
+}
+
+.toggle1:checked ~ .movie-details .rate-button .test svg path ,
+.toggle1:checked ~ .movie-details .rate-button .help svg path{
+    fill: gold;
+    transform: scale(1.1);
+    transition: all 0.15s ease;
+}
+.toggle2:checked ~ .movie-details .rate-button .test2 svg path,
+.toggle2:checked ~ .movie-details .rate-button .test svg path ,
+.toggle2:checked ~ .movie-details .rate-button .help svg path{
+    fill: gold;
+    transform: scale(1.1);
+    transition: all 0.15s ease;
+}
+.toggle3:checked ~ .movie-details .rate-button .test3 svg path,
+.toggle3:checked ~ .movie-details .rate-button .test2 svg path,
+.toggle3:checked ~ .movie-details .rate-button .test svg path ,
+.toggle3:checked ~ .movie-details .rate-button .help svg path{
+    fill: gold;
+    transform: scale(1.1);
+    transition: all 0.15s ease;
+}
+.toggle4:checked ~ .movie-details .rate-button .test4 svg path,
+.toggle4:checked ~ .movie-details .rate-button .test3 svg path,
+.toggle4:checked ~ .movie-details .rate-button .test2 svg path,
+.toggle4:checked ~ .movie-details .rate-button .test svg path ,
+.toggle4:checked ~ .movie-details .rate-button .help svg path{
+    fill: gold;
+    transform: scale(1.1);
+    transition: all 0.15s ease;
+}
+input[type = "radio"] {
+    display: none;
+}
+.rate-button {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.rate-button button {
+    margin-left: 10px;
+    background-color: var(--submitColor);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: "instrument sans";
+    cursor: pointer;
+}
+.add-button {
+    background-color: var(--buttonsColor);
+    border: none;
+    padding: 15px 70px;
+    margin-top: 40px;
+    color: var(--basicColor);
+    font-family: "instrument sans";
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.sun-light {
+    width: 25px;
+    height: 25px;
+    display: none;
+}
+
+#dark {
+    display: none;
 }

@@ -18,6 +18,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bodyColor);
+    user-select: none;
 }
 
 .header {
@@ -38,6 +39,7 @@ body {
     width: 25px;
     height: 25px;
     padding: 3px;
+    cursor: pointer;
 }
 .right-side img {
     width: 40px;
@@ -54,6 +56,12 @@ body {
 .right-side li {
     list-style: none;
     color: var(--basicColor2);
+}
+.right-side a {
+    text-decoration: none;
+}
+.right-side a:hover{
+    transform: scale(1.2);
 }
 
 #logo {
@@ -411,4 +419,12 @@ input[type = "radio"] {
 
 #dark {
     display: none;
+}
+
+.favorites {
+    height: 100vh;
+}
+.heart {
+    width: 30px;
+    height: 34px;
 }

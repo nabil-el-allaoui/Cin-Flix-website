@@ -15,13 +15,13 @@ function prevfunction() {
     document.getElementById('radio' + counter).checked = true;
 }
 
-setInterval(function () {
-    counter++;
-    if (counter === 6) {
-        counter = 1;
-    }
-    document.getElementById('radio' + counter).checked = true;
-}, 3000)
+// setInterval(function () {
+//     counter++;
+//     if (counter === 6) {
+//         counter = 1;
+//     }
+//     document.getElementById('radio' + counter).checked = true;
+// }, 3000)
 
 function searchclick() {
     document.querySelector('.slider').style.display = "none";
@@ -64,20 +64,84 @@ function darkMode() {
 }
 
 dark.addEventListener("click", (e) => {
+    localStorage.setItem("check", dark.checked);
     if (dark.checked === false) {
         lighMode();
         moonButton.style.display = "block";
         sunButton.style.display = "none";
     }
     else {
-        localStorage.setItem("checked", dark.checked)
-        var checked = JSON.parse(localStorage.getItem("checked"));
-        console.log(dark.checked);
-        if(dark.checked === true) {
-            darkMode();
-        }
         darkMode();
         moonButton.style.display = "none";
         sunButton.style.display = "block";
     }
 })
+
+var checked = JSON.parse(localStorage.getItem("check"));
+
+
+if (checked === true) {
+    dark.checked = true;
+    darkMode();
+    moonButton.style.display = "none";
+    sunButton.style.display = "block";
+}
+
+
+function home() {
+    let moviesTobestocked = document.querySelectorAll(".movie");
+    moviesTobestocked.forEach((e, index) => {
+        let movie = e.outerHTML;
+        let heart = e.querySelector("svg");
+        heart.addEventListener("click", () => {
+            e.querySelector("svg").style.fill = "red";
+            localStorage.setItem("form" + index, movie);
+        })
+    });
+
+}
+
+function Load() {
+    for (i = 0; i < 10; i++) {
+        if (localStorage.getItem("form" + i) !== null) {
+            document.getElementById('fav').innerHTML += localStorage.getItem("form" + i);
+        }
+    }
+
+    var movies = document.querySelectorAll(".movie");
+    movies.forEach((e) => {
+        e.querySelector("svg").style.fill = "red";
+    })
+
+    // let movieTobepasted = document.querySelector(".favorites").innerHTML;
+    // movieTobepasted += localStorage.getItem("form");
+
+    let movie_fav = document.querySelectorAll(".movie");
+    movie_fav.forEach((e, index) => {
+        let heart = e.querySelector("svg");
+        heart.addEventListener("click", () => {
+            heart.style.fill = "none";
+            let j = -1;
+            for (i = 0; i < 10; i++) {
+                if (localStorage.getItem("form" + i) !== null) {
+                    j++;
+                }
+                if (j === index) {
+                    localStorage.removeItem("form" + i);
+                }
+            }
+        })
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+

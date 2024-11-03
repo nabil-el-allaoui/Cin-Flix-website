@@ -15,13 +15,13 @@ function prevfunction() {
     document.getElementById('radio' + counter).checked = true;
 }
 
-// setInterval(function () {
-//     counter++;
-//     if (counter === 6) {
-//         counter = 1;
-//     }
-//     document.getElementById('radio' + counter).checked = true;
-// }, 3000)
+setInterval(function () {
+    counter++;
+    if (counter === 6) {
+        counter = 1;
+    }
+    document.getElementById('radio' + counter).checked = true;
+}, 3000)
 
 function searchclick() {
     document.querySelector('.slider').style.display = "none";
@@ -131,6 +131,72 @@ function Load() {
                 }
             }
         })
+    })
+}
+
+
+function details() {
+
+    let interaction = document.querySelector(".like");
+    let like = interaction.querySelector("svg");
+    let LikeNum = interaction.querySelector("p");
+    let stock = Number(LikeNum.textContent);
+
+    let input = document.querySelector(".user-text");
+    let value = "";
+    let submit_button = document.querySelector(".submit-button");
+
+    let jj = 0;
+    if (localStorage.getItem("limit") !== null) {
+        jj = localStorage.getItem("limit");
+    }
+    submit_button.addEventListener("click", () => {
+        value = input.value;
+        if (value === "") {
+            return;
+        }
+        localStorage.setItem("comment" + jj, value);
+        jj++;
+        localStorage.setItem("limit", jj);
+    })
+
+    let doc = document.querySelector(".comment-section");
+    let content = "";
+
+    let kk = 0;
+    while (true) {
+        if (localStorage.getItem("comment" + kk) === null) {
+            break;
+        }
+        content = localStorage.getItem("comment" + kk);
+        let templatee = `
+        <div class="comment-here">
+                <h5>${content}</h5>
+            </div>
+        `
+        doc.innerHTML += templatee;
+        kk++;
+    }
+
+
+    like.addEventListener("click", () => {
+
+        if (like.style.fill === "red") {
+            stock--;
+            like.style.fill = "none";
+            like.style.transform = "scale(1)"
+            LikeNum.style.transform = "scale(1)"
+            LikeNum.innerText = stock;
+
+        } else {
+            stock++;
+            like.style.fill = "red";
+            LikeNum.innerText = stock;
+            like.style.transform = "scale(1.3)";
+            LikeNum.style.transform = "scale(1.3)"
+            like.style.transition = "All 0.20s ease";
+        }
+
     })
 }
 

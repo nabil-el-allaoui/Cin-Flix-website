@@ -29,7 +29,6 @@ body {
     height: 80px;
 }
 .right-side {
-    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -267,9 +266,6 @@ body {
     height: 470px;
     object-fit: contain;
 }
-.image-video video {
-    width: 850px;
-}
 .genre .type {
     height: 40px;
     width: 110px;
@@ -334,7 +330,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.interaction input {
+.interaction .user-text {
     padding-bottom: 90px;
     width: 300px;
     border: 1px solid black;
@@ -390,11 +386,13 @@ input[type = "radio"] {
     align-items: center;
     margin-top: 10px;
 }
-.rate-button button {
+.submit-button {
     margin-left: 10px;
     background-color: var(--submitColor);
     border: none;
-    padding: 10px 20px;
+    width: 100px;
+    font-size: 14px;
+    padding: 10px 0px;
     border-radius: 2px;
     font-weight: 500;
     font-family: "instrument sans";
@@ -427,4 +425,90 @@ input[type = "radio"] {
 .heart {
     width: 30px;
     height: 34px;
+}
+
+
+.comment-send {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.comment-section {
+    height: fit-content;
+    background-color: var(--mainColor);
+    display: grid;
+    place-items: center;
+    row-gap: 10px;
+}
+.comment-section h1 {
+    color: var(--basicColor2);
+}
+.comment-here {
+    background-color: rgb(235, 230, 230);
+    width: 300px;
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.image-video video {
+    width: 600px;
+}
+
+@media (max-width: 1024px){
+    .movie-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .slider-section img{
+        width: 20%;
+    }
+}
+
+@media (max-width: 768px){
+    .movie-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .slider-section img{
+        width: 20%;
+    }
+    .image-video video {
+        width: 400px;
+    }
+}
+
+@media (max-width: 426px){
+    .movie-section{
+        grid-template-columns: 1fr;
+    }
+    .slider-section img{
+        width: 20%;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .image-video {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    .genre{
+        width: 100%;
+    }
+    .movie-details{
+        grid-template-columns: 1fr;
+    }
+    .description {
+        border: none;
+    }
+    
+}
+
+@media (max-width: 376px){
+    .right-side {
+        width: 100%;
+    }
+    .image-video video {
+        width: 300px;
+    }
 }
